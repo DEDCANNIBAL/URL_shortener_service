@@ -23,6 +23,7 @@
 
 <body>
 <div class="navbar">
+    <a href={% url 'url_shortener' %} class="right">Home</a>
     {% if user.is_authenticated %}
         <a class="navbar-brand">{{ user.username }}</a>
         <a href={% url 'sign_out' %} class="right">Sign out</a>

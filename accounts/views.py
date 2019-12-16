@@ -22,7 +22,6 @@ class LoginFormView(FormView):
     template_name = 'login.html'
     success_url = "/"
 
-
     def form_valid(self, form):
         user = form.get_user()
         login(self.request, user)

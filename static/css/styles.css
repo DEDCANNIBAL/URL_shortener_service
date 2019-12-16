@@ -45,3 +45,9 @@
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
+
+.main {
+    flex: 70%;
+    background-color: white;
+    padding: 20px;
+}
