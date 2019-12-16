@@ -1,0 +1,22 @@
+<table class="table">
+    <thead>
+    <tr>
+        <th>Origin URL</th>
+        <th>Created</th>
+        <th>Short URL</th>
+        <th>All clicks</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {% for row in short_urls_page %}
+        <tr>
+            <td><a href="{{ row.origin_url }}"> {{ row.origin_url }}</td>
+            <td>{{ row.date_created|date:"d M Y" }} {{ row.date_created|time:"H:i" }}</td>
+            <td><a href="{{ row.short_url }}"> {{ request.get_host }}/{{ row.short_url }}</td>
+            <td>{{ row.click_counter }}</td>
+        </tr>
+
+    {% endfor %}
+    </tbody>
+</table>

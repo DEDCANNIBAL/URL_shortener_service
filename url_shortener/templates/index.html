@@ -1,1 +1,8 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+{% block content %}
+    {% include 'short_url_creation.html' %}
+    {% if user.is_authenticated %}
+        {% include 'short_urls_table.html' %}
+        {% include 'short_urls_paginator.html' %}
+    {% endif %}
+{% endblock %}

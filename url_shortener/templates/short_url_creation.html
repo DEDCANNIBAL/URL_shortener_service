@@ -1,0 +1,15 @@
+<form class="form-inline" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <input type="text" class="form-control" name="origin_url"
+               placeholder="Your original URL here" required>
+    </div>
+    <button type="submit" class="btn btn-primary" name="action"
+            value="shorten_url">Shorten URL
+    </button>
+</form>
+{% if short_url %}
+    {% include 'short_url_field.html' with short_url=request.get_host|add:"/"|add:short_url %}
+{% else %}
+    {% include 'short_url_field.html' with short_url="" %}
+{% endif %}
